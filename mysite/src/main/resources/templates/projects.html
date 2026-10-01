@@ -1,0 +1,86 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT | 스마일건축사사무소</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.jpg" alt="스마일건축사사무소" class="logo-img">
+                <span class="logo-title">스마일건축사사무소</span>
+            </a>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="/">HOME</a>
+            <a href="/projects" class="active">PROJECT</a>
+            <a href="/profile">ABOUT</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="portfolio-grid">
+
+            <a href="/project/1" class="project-card">
+                <div class="image-wrapper">
+                    <img src="/images/project1.jpeg" alt="프로젝트 1">
+                    <div class="overlay">
+                        <h3>프로젝트 이름</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/project/2" class="project-card">
+                <div class="image-wrapper">
+                    <img src="/images/project2.webp" alt="프로젝트 2">
+                    <div class="overlay">
+                        <h3>프로젝트 이름</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/project/3" class="project-card">
+               <div class="image-wrapper">
+                    <img src="/images/project3.jpg" alt="프로젝트 3">
+                    <div class="overlay">
+                        <h3>프로젝트 이름</h3>
+                    </div>
+                </div>
+            </a>
+
+        </section>
+    </main>
+
+    <footer>
+     <p>스마일건축사사무소</p>
+     <p>주소: 경기도 안양시 동안구 벌말로 123, A동 1111호</p>
+     <p>전화: 010-9507-2080</p>
+     <p>이메일: smilech316@naver.com</p>
+     <p>팩스: 0504 480 0352</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            if (hamburgerBtn && navLinks) {
+                hamburgerBtn.addEventListener('click', function() {
+        // 토글 클래스 추가/제거
+                    hamburgerBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

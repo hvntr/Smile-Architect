@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${title} + ' | 스마일건축사사무소'">PROJECT DETAIL | 스마일건축사사무소</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+       <div class="logo">
+           <a href="/">
+               <img src="/images/logo.jpg" alt="스마일건축사사무소" class="logo-img">
+               <span class="logo-title">스마일건축사사무소</span>
+            </a>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="/">HOME</a>
+            <a href="/projects" class="active">PROJECT</a>
+            <a href="/profile">ABOUT</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="project-detail-layout">
+
+            <aside class="detail-sidebar">
+                <div class="sidebar-sticky-content">
+
+                    <h1 class="detail-title" th:text="${title}">산촌청년공동체 활성화센터</h1>
+                    <p class="detail-subtitle" th:text="${subtitle}">Sanchon Youth Community Center</p>
+
+                    <dl class="detail-meta">
+                        <div class="meta-row">
+                            <dt>위치</dt>
+                            <dd th:text="${location}">강원도 인제군</dd>
+                        </div>
+                        <div class="meta-row">
+                            <dt>용도</dt>
+                            <dd th:text="${use}">공공업무시설, 근린생활시설</dd>
+                        </div>
+                        <div class="meta-row">
+                            <dt>연면적</dt>
+                            <dd th:text="${area}">850.45 ㎡</dd>
+                        </div>
+                        <div class="meta-row">
+                            <dt>연도</dt>
+                            <dd th:text="${year}">2025</dd>
+                        </div>
+                    </dl>
+
+                    <div class="detail-description">
+                        <p th:text="${desc}">
+                            프로젝트 상세 설명글입니다.
+                        </p>
+                    </div>
+
+                </div>
+            </aside>
+
+            <section class="detail-gallery">
+                <div class="gallery-item">
+                    <img th:src="${img1}" src="/images/project1.jpeg" alt="프로젝트 이미지 1">
+                </div>
+                <div class="gallery-item">
+                    <img th:src="${img2}" src="/images/project2.webp" alt="프로젝트 이미지 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/project3.jpg" alt="프로젝트 이미지 3">
+                </div>
+            </section>
+
+            <div class="back-link">
+                <a href="/projects">← Back to Projects</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>스마일건축사사무소</p>
+        <p>주소: 경기도 안양시 동안구 벌말로 123, A동 1111호</p>
+        <p>전화: 010-9507-2080</p>
+        <p>이메일: smilech316@naver.com</p>
+        <p>팩스: 0504 480 0352</p>
+    </footer>
+
+<script src="/js/script.js"></script>
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            if (hamburgerBtn && navLinks) {
+                hamburgerBtn.addEventListener('click', function() {
+        // 토글 클래스 추가/제거
+                    hamburgerBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+  </script>
+</body>
+</html>

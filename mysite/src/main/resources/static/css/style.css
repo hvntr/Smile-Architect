@@ -1,0 +1,1187 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    color: #111111;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    font-size: 20px;
+    width: 100%;
+}
+
+body.main-page {
+  background-color: #0b192c !important;
+  padding: 0;
+  margin: 0;
+  height: auto
+  overflow-x: hidden;
+  overflow-y: auto
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* 모든 헤더 패딩 및 크기 완전 고정 */
+  height: 80px; 
+  padding: 0 50px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* 상단 글씨 가독성을 위한 그라데이션 */
+  border-bottom: none;
+  z-index: 100;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111111; /* 일반 헤더 기본 글자색 */
+  white-space: nowrap;
+}
+
+.logo-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111111;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px; /* 메뉴 간 넓은 간격 */
+  align-items: center;
+}
+
+.nav-link a {
+  font-size:1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #4e4e4e;
+}
+
+.hero-navbar .nav-links a {
+  color: #ffffff;
+}
+
+.hero-navbar .logo-title {
+  color: #ffffff;
+}
+
+.nav-links a:hover {
+    color: #111111 !important;
+    font-weight: 600;
+}
+
+
+.nav-links a.active {
+  color: #aaaaaa !important;
+  font-weight: 500;
+}
+
+
+
+main.container,
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 50px; /* 컨텐츠 내부 좌우 패딩만 정갈하게 유지 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    row-gap: 40px;
+    margin-top: 40px;
+}
+
+.project-card {
+  cursor: pointer;
+  display: block;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    trasnform: scale(1.03);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .image-wrapper img {
+  opacity: 1;
+  transform: scale(1.03); /* 약간의 확대 효과 */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* 클릭 이벤트 방해 금지 */
+  padding: 20px;
+}
+
+.overlay h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: 0 20px;
+  word-break: keep-all;
+  text-shadow: none !important;
+}
+
+.overlay h3,
+.overlay p,
+.overlay span,
+.project-card:hover .overlay h3 {
+  color: #ffffff !important; /* 글자색 흰색 */
+  font-size: 1.5rem !important;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.project-card h3 {
+    margin-top: 14px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #333;
+}
+
+
+footer {
+    margin-top: 80px;
+    padding: 24px 0;
+    border-top: 1.05px solid #eee;
+    font-size: 1.25rem;
+    color: #aaa;
+    text-align: center;
+}
+
+footer {
+  padding: 60px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 푸터 내부 텍스트 색상 (어두운 배경에 맞게 밝게 변경) */
+footer p {
+  color: #313131 !important; /* 은은한 연회색 */
+  margin: 4px 0;
+  font-size: 1.25rem !important; /* (기존 0.85rem -> 0.98rem) */
+  line-height: 1.8;
+}
+
+footer p:first-child {
+  color: #151515 
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+footer.main-footer,
+.main-footer {
+  background-color: #0b192c !important; /* 짙은 파란색(네이비) */
+  padding: 60px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  border-top: 1px solid #1e293b;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 푸터 내부 텍스트 색상 (어두운 배경에 맞게 밝게 변경) */
+.main-footer p {
+  color: #94a3b8 !important; /* 은은한 연회색 */
+  margin: 4px 0;
+  font-size: 1.25rem !important; /* (기존 0.85rem -> 0.98rem) */
+  line-height: 1.8;
+}
+
+.main-footer p:first-child {
+  color: #ffffff !important; /* 사무소 이름은 또렷한 흰색 */
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.architect-container {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+    align-items: flex-start;
+}
+
+.architect-image {
+    flex: 1;
+    max-width: 450px;
+    position: sticky;
+    top: 40px;
+}
+
+.architect-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  background-color: #f4f4f4;
+}
+
+.architect-info {
+  flex: 1.2;
+}
+
+.info-block {
+  margin-bottom: 50px;
+}
+
+.info-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  color: #111;
+  border-bottom: 1px solid #111;
+  padding-bottom: 8px;
+}
+
+.info-block .description {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* 소장 소개 스타일 */
+.principal-info .name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.principal-info .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #777;
+  margin-left: 8px;
+}
+
+.history-group {
+  margin-bottom: 20px;
+}
+
+.history-group h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.history-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.history-group li {
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* 연락처 영역 */
+.contact-block p {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+
+.project-detail-layout {
+  display: flex;
+  gap: 80px;
+  margin-top: 50px;
+  align-items: flex-start;
+}
+
+.detail-gallery {
+  flex: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 48px; /* 이미지 간 넉넉한 여백 */
+}
+
+.gallery-item {
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.detail-sidebar {
+  flex: 1;
+  max-width: 380px;
+  position: sticky;
+  top: 100px; /* 헤더 아래에서 고정되어 스크롤 따라옴 */
+}
+
+.detail-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.detail-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #888888;
+  margin-bottom: 32px;
+}
+
+/* 건축 개요 (소규모 스타일 메타데이터 목록) */
+.detail-meta {
+  border-top: 1px solid #1a1a1a; /* 얇은 상단 선 */
+  border-bottom: 1px solid #eeeeee;
+  padding: 16px 0;
+  margin-bottom: 28px;
+}
+
+.meta-row {
+  display: flex;
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+.meta-row dt {
+  width: 80px;
+  color: #888888;
+  font-weight: 400;
+}
+
+.meta-row dd {
+  color: #222222;
+  font-weight: 400;
+}
+
+/* 설명글 스타일 */
+.detail-description {
+  font-size: 1.5rem;
+  line-height: 1.85;
+  color: #444444;
+  font-weight: 300;
+  word-break: keep-all;
+  margin-bottom: 40px;
+}
+
+/* 목록 돌아가기 버튼 */
+.back-link a {
+  font-size: 0.95rem;
+  color: #888888;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.back-link a:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slider-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; 
+  min-height: 600px;         
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.slides-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비율을 유지하면서 영역을 꽉 채움 */
+  object-position: center;
+  display: block;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: none !important;      /* 배경 완전 제거 */
+  border: none !important;          /* 테두리 제거 */
+  outline: none;
+  color: rgba(255, 255, 255, 0.7);  /* 기본 은은한 흰색 */
+  font-size: 3.5rem;                /* 화살표 글자 크기 확대 */
+  font-weight: 200;
+  line-height: 1;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.slider-arrow:hover {
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.prev-arrow { left: 20px; }
+.next-arrow { right: 20px; }
+
+.next-arrow {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* 오른쪽 화살표 마우스 올렸을 때 애니메이션 */
+.next-arrow:hover {
+  transform: translateY(-50%) rotate(180deg) scale(1.15) !important;
+}
+
+/* 하단 Dot (인디케이터) */
+.slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4); /* 평소 반투명 흰색 */
+  cursor: default;
+  transition: background-color 0.4s ease;
+}
+
+/* 현재 슬라이드 Dot: 선명한 흰색 & 약간 확대 */
+.dot.active {
+  background-color: #ffffff;
+  transform: scale(1.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes naturalFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. 대상 요소들의 초기 상태를 '완전한 빈 화면(opacity: 0)'으로 설정 */
+.portfolio-grid .project-card,
+.detail-gallery .gallery-item,
+.about-container, 
+.profile-content {
+  opacity: 0; /* 진입 전 완전한 빈 상태 보장 */
+  will-change: opacity, transform;
+  
+  /* 1.0초간 부드러운 감속 곡선(ease-out)으로 전환 */
+  animation: naturalFadeInUp 1.0s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+/* 3. 요소들이 연속적이고 자연스럽게 떠오르도록 시간차(Delay) 적용 */
+.portfolio-grid .project-card:nth-child(1),
+.detail-gallery .gallery-item:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.portfolio-grid .project-card:nth-child(2),
+.detail-gallery .gallery-item:nth-child(2) {
+  animation-delay: 0.30s;
+}
+
+.portfolio-grid .project-card:nth-child(3),
+.detail-gallery .gallery-item:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.portfolio-grid .project-card:nth-child(4),
+.detail-gallery .gallery-item:nth-child(4) {
+  animation-delay: 0.60s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 100px 20px !important;
+}
+
+.about-wrapper {
+  max-width: 860px; /* 전체 중앙 폭 제한 */
+  width: 100%;
+  margin: 0 auto;
+  text-align: center; /* 텍스트 전체 가운데 정렬 */
+}
+
+/* 상단 메인 대표 사진 */
+.about-hero-image {
+  width: 100%;
+  max-width: 500px;         /* 이미지 최대 너비를 적절한 크기로 줄임 */
+  height: auto;             /* 고정 높이를 해제하여 이미지 비율 유지 */
+  margin: 0 auto 40px auto; /* 가운데 정렬 및 하단 여백 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 하단 글씨 스타일 */
+.about-text-content {
+  color: #111111;
+}
+
+.about-title {
+  font-size: 2.2rem !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.about-intro {
+  font-size: 1.5rem !important;
+  line-height: 1.8;
+  color: #444444;
+  margin-bottom: 50px;
+  word-break: keep-all;
+}
+
+/* 세부 정보 영역 (대표자, 업무, 연락처) */
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  border-top: 1px solid #eeeeee;
+  padding-top: 40px;
+}
+
+.detail-item h3 {
+  font-size: 1.35rem !important;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.detail-item p {
+  font-size: 1.25rem !important;
+  color: #666666;
+  margin: 2px 0;
+}
+
+/* ABOUT 페이지 진입 애니메이션 (자연스러운 위로 슬라이드) */
+.about-wrapper {
+  opacity: 0;
+  animation: naturalFadeInUp 1.0s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+  animation-delay: 0.1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html, body {
+  max-width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-section,
+.hero-slider,
+.swiper-container,
+.swiper-slide {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.swiper-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ==========================================
+   2. 헤더 메뉴 잘림 방지 (HOME / PROJECT / ABOUT)
+   ========================================== */
+
+.navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 30px !important; /* 좌우 여백을 다소 축소하여 공간 확보 */
+}
+
+/* 로고 영역과 메뉴 영역이 잘리지 않고 유연하게 축소되도록 설정 */
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important; /* 메뉴 간격 정렬 */
+  flex-shrink: 0;
+}
+
+.nav-links a {
+  white-space: nowrap !important; /* 글자 줄바꿈 방지 */
+  font-size: 1.05rem !important;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+
+  /* ------------------------------------------------------------------------
+     2. 공통 컨테이너 및 헤더 슬림화 (메뉴 잘림 방지)
+     ------------------------------------------------------------------------ */
+  main.container,
+  .container {
+    padding: 20px 16px !important;
+  }
+
+  .navbar {
+    height: 56px !important;
+    padding: 0 16px !important;
+  }
+
+  .logo-img {
+    height: 26px !important;
+    width: auto;
+  }
+
+  .logo-title {
+    font-size: 0.9rem !important;
+  }
+
+  .nav-links {
+    gap: 12px !important;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     3. 메인 페이지 (슬라이더 가로 스크롤 해제)
+     ------------------------------------------------------------------------ */
+  .hero-section,
+  .hero-slider,
+  .swiper-container,
+  .swiper-slide {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     4. PROJECTS 페이지 (모바일 1열 카드 배치)
+     ------------------------------------------------------------------------ */
+  .portfolio-grid,
+  .projects-grid,
+  .project-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* 모바일에서 한 줄에 1개씩 */
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .project-card,
+  .portfolio-item {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     5. ABOUT 페이지 (로고/이미지 규격 & 글자 크기 조정)
+     ------------------------------------------------------------------------ */
+  .about-container {
+    padding: 24px 16px 50px 16px !important;
+  }
+
+  .about-hero-image {
+    max-width: 260px !important; /* 대표 로고/사진 축소 */
+    height: auto !important;
+    margin: 0 auto 24px auto !important;
+  }
+
+  .about-hero-image img {
+    object-fit: contain !important;
+  }
+
+  .about-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  .about-intro {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .about-details {
+    gap: 18px !important;
+    padding-top: 24px !important;
+  }
+
+  .detail-item h3 {
+    font-size: 0.98rem !important;
+  }
+
+  .detail-item p {
+    font-size: 0.9rem !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     6. PROJECT DETAIL 페이지 (상하 순서: 설명글 ➔ 사진 ➔ 버튼)
+     ------------------------------------------------------------------------ */
+  .project-detail-layout {
+    display: flex !important;
+    flex-direction: column !important; /* 세로 정렬 지정 */
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+  /* (1) 프로젝트 설명 영역: 최상단 */
+  .detail-sidebar {
+    order: 1 !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+    text-align: center;
+  }
+
+  .detail-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
+    text-align: center;
+  }
+
+  .detail-meta,
+  .detail-description {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    text-align: center;
+  }
+
+  /* (2) 사진 갤러리 영역: 중간 */
+  .detail-gallery {
+    order: 2 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .gallery-item img,
+  .detail-gallery img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* (3) Back to Projects 링크: 최하단 */
+  .back-link {
+    order: 3 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 28px !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     7. 하단 푸터 (Footer)
+     ------------------------------------------------------------------------ */
+  .main-footer,
+  footer {
+    padding: 24px 16px !important;    /* 위아래 여백을 기존 40px -> 24px로 대폭 축소 */
+    text-align: center !important;
+    background-color: #eeeeee !important; /* 기존 네이비 배경 유지 */
+  }
+
+  /* 상단 사무소 이름 (스마일건축사사무소) */
+  .main-footer p:first-child,
+  footer p:first-child {
+    font-size: 0.88rem !important;    /* 기존 1.0rem -> 0.88rem로 축소 */
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;    /* 하단 간격 축소 */
+    letter-spacing: -0.01em;
+  }
+
+  /* 세부 정보 (주소, 전화, 이메일, 팩스, Copyright 등) */
+  .main-footer p,
+  footer p {
+    font-size: 0.75rem !important;    /* 기존 0.85rem -> 0.75rem(작고 또렷하게) */
+    line-height: 1.45 !important;     /* 줄 간격 조여서 슬림하게 정돈 */
+    margin-bottom: 3px !important;    /* 각 줄 사이 간격 최소화 */
+    opacity: 0.8;                     /* 과하지 않게 살짝 톤다운 */
+  }
+
+
+
+
+
+
+  .detail-sidebar,
+  .sidebar-sticky-content {
+    text-align: center !important;
+  }
+
+  /* 메타 정보 목록(dl) 박스를 화면 중앙으로 정렬 */
+  .detail-meta {
+    display: inline-block !important; /* 가운데 정렬을 위한 블록화 */
+    margin: 20px auto !important;
+    text-align: left !important;      /* 항목끼리의 열 정렬은 일정하게 유지 */
+  }
+
+  .meta-row {
+    display: flex !important;
+    justify-content: center !important; /* 항목명(dt)과 내용(dd) 중앙 배치 */
+    align-items: center !important;
+    gap: 24px !important;              /* 라벨과 내용 사이 적절한 간격 */
+    margin-bottom: 8px !important;
+  }
+
+  .meta-row dt {
+    width: 60px !important;            /* 라벨 폭 고정으로 깔끔한 줄맞춤 */
+    text-align: right !important;      /* 오른쪽 정렬로 항목 구분 */
+    color: #888888;
+  }
+
+  .meta-row dd {
+    margin: 0 !important;
+    text-align: left !important;       /* 내용 왼쪽 정렬 */
+    font-weight: 500;
+  }
+
+  /* 설명글 및 기타 텍스트 중앙 정렬 */
+  .detail-description,
+  .detail-subtitle {
+    text-align: center !important;
+  }
+
+
+
+
+
+
+
+
+
+
+  .navbar {
+    position: relative !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 58px !important;
+    padding: 0 16px !important;
+    z-index: 1000;
+  }
+
+  /* 햄버거 아이콘 버튼 디자인 */
+  .hamburger-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-btn span {
+    width: 100%;
+    height: 2px;
+    background-color: #333333; /* 버튼 선 색상 */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* 햄버거 버튼 클릭 시 'X' 모양으로 전환 */
+  .hamburger-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* 모바일 토글 메뉴 드롭다운 디자인 */
+  .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 58px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 0 !important;
+    max-height: 0;            /* 기본적으로 닫힌 상태 */
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out, padding 0.35s ease-in-out;
+    z-index: 999;
+  }
+
+  /* 햄버거 메뉴 열림(active) 클래스 추가 시 */
+  .nav-links.active {
+    max-height: 200px !important; /* 메뉴 펼침 높이 */
+    padding: 16px 0 !important;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-links a {
+    padding: 12px 24px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: #222222 !important;
+    text-align: left !important;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* 데스크톱(769px 이상)에서는 햄버거 버튼 숨김 */
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none !important;
+  }
+}

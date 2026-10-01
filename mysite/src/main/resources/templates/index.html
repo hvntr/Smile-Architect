@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>스마일건축사사무소</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="main-page">
+
+<header class="navbar hero-navbar">
+    <div class="logo">
+        <a href='/'>
+            <img src="/images/logo.jpg" alt="스마일건축사사무소" class="logo-img">
+            <span class="logo-title">스마일건축사사무소</span>
+        </a>
+    </div>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+        <a href="/" class="active">HOME</a>
+        <a href="/projects">PROJECT</a>
+        <a href="/profile">ABOUT</a>
+    </nav>
+</header>
+
+<main class="slider-container">
+
+    <div class="slide active">
+        <img th:src="@{/images/project1.jpeg}" src="/images/project1.webp" alt="대표 작품1">
+    </div>
+    <div class="slide">
+        <img th:src="@{/images/project2.webp}" src="/images/project2.webp" alt="대표 작품2">
+    </div>
+    <div class="slide">
+        <img th:src="@{/images/project3.jpg}" src="/images/project3.jpg" alt="대표 작품3">
+    </div>
+
+    <button class="slider-arrow prev-arrow" onclick="moveSlide(-1)">&lsaquo;</button>
+    <button class="slider-arrow next-arrow" onclick="moveSlide(1)">&lsaquo;</button>
+
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</main>
+
+
+
+<footer class="main-footer">
+    <p>스마일건축사사무소</p>
+    <p>주소: 경기도 안양시 동안구 벌말로 123, A동 1111호</p>
+    <p>전화: 010-9507-2080</p>
+    <p>이메일: smilech316@naver.com</p>
+    <p>팩스: 0504 480 0352</p>
+</footer>
+
+<script>
+    // DOM 요소가 모두 로드된 후 안전하게 실행
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentIdx = 0;
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      let timer = null;
+
+      // 슬라이드를 변경하는 핵심 함수
+      function showSlide(index) {
+        if (!slides || slides.length === 0) return;
+
+        // 인덱스 범위 초과 처리
+        if (index >= slides.length) {
+          currentIdx = 0;
+        } else if (index < 0) {
+          currentIdx = slides.length - 1;
+        } else {
+          currentIdx = index;
+        }
+
+        // 전체 슬라이드 active 클래스 제거 후 현재 슬라이드만 추가
+        slides.forEach(function(slide, i) {
+          if (i === currentIdx) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        // 인디케이터 Dot active 클래스 연동
+        dots.forEach(function(dot, i) {
+          if (i === currentIdx) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      // 전역(window) 함수로 등록하여 HTML onclick에서도 호출 가능하게 연결
+      window.moveSlide = function(step) {
+        showSlide(currentIdx + step);
+        resetTimer();
+      };
+
+      window.currentSlide = function(index) {
+        showSlide(index);
+        resetTimer();
+      };
+
+      // 4초 자동 슬라이드 타이머
+      function startTimer() {
+        timer = setInterval(function() {
+          showSlide(currentIdx + 1);
+        }, 4000);
+      }
+
+      function resetTimer() {
+        if (timer) clearInterval(timer);
+        startTimer();
+      }
+
+      // 초기 실행
+      showSlide(0);
+      startTimer();
+    });
+  </script>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            if (hamburgerBtn && navLinks) {
+                hamburgerBtn.addEventListener('click', function() {
+        // 토글 클래스 추가/제거
+                    hamburgerBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+  </script>
+</body>
+</html>

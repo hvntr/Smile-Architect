@@ -1,0 +1,83 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABOUT | 스마일건축사사무소</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+       <div class="logo">
+            <a href="/">
+                <img src="/images/logo.jpg" alt="스마일건축사사무소" class="logo-img">
+                <span class="logo-title">스마일건축사사무소</span>
+            </a>
+       </div>
+       <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+       </button>
+       <nav class="nav-links" id="navLinks">
+            <a href="/">HOME</a>
+            <a href="/projects">PROJECT</a>
+            <a href="/profile" class="active">ABOUT</a>
+       </nav>
+    </header>
+
+    <main class="container about-container">
+    <div class="about-wrapper">
+      
+      <!-- 1. 상단 가운데 대표 사진 -->
+      <div class="about-hero-image">
+        <img th:src="@{/images/logo.jpg}" src="/images/logo.jpg" alt="스마일건축사사무소 스튜디오">
+      </div>
+
+            <section class="about-text-content">
+                <h1 class="about-title">SMILE ARCHITECT</h1>
+                <p class="about-intro">
+                    <strong>스마일건축사사무소</strong>는 눈부신 박장대소보다, 오래 머무는 미소를 설계합니다.
+                    유행이나 과시가 아닌, 삶을 이해하는 건축. 작은 변화로 일상에 스며들어, 오랫동안 편안한 미소를 남기는 공간.
+                    스마일 건축은 사람의 삶을 닮은 건축을 만듭니다.
+                    </p>
+
+            <div class="about-details">
+                <div class="detail-item">
+                    <h3>대표 건축사</h3>
+                    <p>엄천학</p>
+                </div>
+                <div class="detail-item">
+                    <h3>주요 업무</h3>
+                    <p>건축 설계 · 인테리어 디자인 · 감리 및 컨설팅</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+     <p>스마일건축사사무소</p>
+     <p>주소: 경기도 안양시 동안구 벌말로 123, A동 1111호</p>
+     <p>전화: 010-9507-2080</p>
+     <p>이메일: smilech316@naver.com</p>
+     <p>팩스: 0504 480 0352</p> 
+    </footer>
+
+<script src="/js/script.js"></script>
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            if (hamburgerBtn && navLinks) {
+                hamburgerBtn.addEventListener('click', function() {
+        // 토글 클래스 추가/제거
+                    hamburgerBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+  </script>
+</body>
+</html>
