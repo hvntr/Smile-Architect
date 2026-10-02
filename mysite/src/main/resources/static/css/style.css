@@ -67,7 +67,7 @@ a:active {
 }
 
 .logo-img {
-  height: 32px;
+  height: 24px;
   width: auto;
   display: block;
 }
@@ -874,7 +874,7 @@ html, body {
   }
 
   .logo-img {
-    height: 26px !important;
+    height: 16px !important;
     width: auto;
   }
 
