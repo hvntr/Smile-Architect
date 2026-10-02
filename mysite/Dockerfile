@@ -3,7 +3,10 @@ WORKDIR /app
 
 # 2. 소스 코드 복사 및 빌드 (테스트 스킵)
 COPY . .
-RUN ./mvnw clean package -DskipTests
+RUN apt-get update && apt-get install -y dos2unix && \
+    dos2unix ./mvnw && \
+    chmod +x ./mvnw && \
+    sh ./mvnw clean package -DskipTests
 
 # 3. 경량화된 Java 17 실행 환경으로 JAR 파일 복사 후 실행
 FROM eclipse-temurin:17-jre
