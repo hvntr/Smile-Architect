@@ -53,8 +53,8 @@ public class HomeController {
             model.addAttribute("desc", "설명");
             model.addAttribute("img1", "/images/투시도-3.jpg");
             model.addAttribute("img2", "/images/가로수길.jpg");
-            model.addAttribute("img2", "/images/project3-1.jpg");
-            model.addAttribute("img2", "/images/project3-2.jpg");
+            model.addAttribute("img3", "/images/project3-1.jpg");
+            model.addAttribute("img4", "/images/project3-2.jpg");
         }
         return "project-detail";
     }
