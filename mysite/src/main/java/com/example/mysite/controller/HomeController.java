@@ -35,8 +35,7 @@ public class HomeController {
             model.addAttribute("area", "2,824 ㎡");
             model.addAttribute("year", "2019");
             model.addAttribute("desc", "설명");
-            model.addAttribute("img1", "사진");
-            model.addAttribute("img2", "사진");
+            model.addAttribute("img1", "/images/project1.jpg");
         } else if (id==2) {
             model.addAttribute("title", "단남초 체육관");
             model.addAttribute("location", "경기 성남시");
@@ -44,17 +43,18 @@ public class HomeController {
             model.addAttribute("area", "894 ㎡");
             model.addAttribute("year", "2021");
             model.addAttribute("desc", "설명");
-            model.addAttribute("img1", "사진");
-            model.addAttribute("img2", "사진");
+            model.addAttribute("img1", "/images/project2.png");
         } else if (id==3) {
-            model.addAttribute("title", "프로젝트이름");
-            model.addAttribute("location", "위치");
-            model.addAttribute("use", "시설용도");
-            model.addAttribute("area", "면적");
-            model.addAttribute("year", "연도");
+            model.addAttribute("title", "문화복합시설 공모 참가작");
+            model.addAttribute("location", "충남 영동군");
+            model.addAttribute("use", "문화시설");
+            model.addAttribute("area", "747 ㎡");
+            model.addAttribute("year", "2023");
             model.addAttribute("desc", "설명");
-            model.addAttribute("img1", "사진");
-            model.addAttribute("img2", "사진");
+            model.addAttribute("img1", "/images/투시도-3.jpg");
+            model.addAttribute("img2", "/images/가로수길.jpg");
+            model.addAttribute("img2", "/images/project3-1.jpg");
+            model.addAttribute("img2", "/images/project3-2.jpg");
         }
         return "project-detail";
     }

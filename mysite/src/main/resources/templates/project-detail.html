@@ -65,14 +65,17 @@
             </aside>
 
             <section class="detail-gallery">
-                <div class="gallery-item">
+                <div class="gallery-item" th:if="${img1 != null}">
                     <img th:src="${img1}" src="/images/project1.jpg" alt="K 기숙사">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" th:if="${img2 != null}">
                     <img th:src="${img2}" src="/images/project2.png" alt="프로젝트 이미지 2">
                 </div>
-                <div class="gallery-item">
-                    <img src="/images/project3.jpg" alt="프로젝트 이미지 3">
+                <div class="gallery-item" th:if="${img3 != null}">
+                    <img th:src="${img3}" src="/images/투시도-3.jpg" alt="프로젝트 이미지 3">
+                </div>
+                <div class="gallery-item" th:if="${img4 != null}">
+                    <img th:src="${img4}" src="/images/project4.jpg" alt="프로젝트 이미지 4">
                 </div>
             </section>
 
