@@ -858,6 +858,33 @@ html, body {
   font-weight: 600;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 
   /* ------------------------------------------------------------------------
@@ -901,6 +928,8 @@ html, body {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    height: 50vh !important;    /* 스마트폰 화면 높이의 50%로 축소 (원하는 높이로 숫자 조절 가능) */
+    max-height: 400px;
   }
 
   /* ------------------------------------------------------------------------
